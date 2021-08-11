@@ -21,7 +21,11 @@ class Profiles extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(EvaIcons.logOutOutline),
-            onPressed: () {},
+            onPressed: () {
+              print('logout tapped');
+              Provider.of<ProfileHelpers>(context, listen: false)
+                  .logOutDialog(context);
+            },
             color: constantColors.greenColor,
           )
         ],
@@ -60,7 +64,13 @@ class Profiles extends StatelessWidget {
                   return Column(
                     children: [
                       Provider.of<ProfileHelpers>(context, listen: false)
-                          .headerProfile(context, snapshot)
+                          .headerProfile(context, snapshot),
+                      Provider.of<ProfileHelpers>(context, listen: false)
+                          .divider(),
+                      Provider.of<ProfileHelpers>(context, listen: false)
+                          .middleProfile(context, snapshot),
+                      Provider.of<ProfileHelpers>(context, listen: false)
+                          .footerProfile(context, snapshot)
                     ],
                   );
                 }

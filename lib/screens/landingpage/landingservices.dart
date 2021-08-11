@@ -192,15 +192,17 @@ class LandingService with ChangeNotifier {
                         Provider.of<Authentication>(context, listen: false)
                             .logIntoAccount(
                                 emailcontroller.text, passwordcontroller.text)
-                            .whenComplete(() {
-                          Navigator.pushReplacement(
-                            context,
-                            PageTransition(
-                              type: PageTransitionType.bottomToTop,
-                              child: HomePage(),
-                            ),
-                          );
-                        });
+                            .whenComplete(
+                          () {
+                            Navigator.pushReplacement(
+                              context,
+                              PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                child: HomePage(),
+                              ),
+                            );
+                          },
+                        );
                       } else {
                         warningText(context, 'Fill all data');
                       }
