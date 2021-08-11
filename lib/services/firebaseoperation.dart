@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -43,9 +45,9 @@ class FirebaseOperations with ChangeNotifier {
         .get()
         .then((doc) {
       print("fetching data");
-      initUserName = doc['username'];
-      initUserEmail = doc['useremail'];
-      initUserImage = doc['userimage'];
+      initUserName = (doc.data() as dynamic)['username'];
+      initUserEmail = (doc.data() as dynamic)['useremail'];
+      initUserImage = (doc.data() as dynamic)['userimage'];
       print(initUserEmail);
       print(initUserImage);
       print(initUserName);
