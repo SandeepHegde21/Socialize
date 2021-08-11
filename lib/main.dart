@@ -5,6 +5,7 @@ import 'package:socialize/screens/HomePage/homepagehelpers.dart';
 import 'package:socialize/screens/landingpage/landinghelpers.dart';
 import 'package:socialize/screens/landingpage/landingservices.dart';
 import 'package:socialize/screens/landingpage/landingutils.dart';
+import 'package:socialize/screens/profiles/profilehelpers.dart';
 import 'package:socialize/screens/splashscreen/splashscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:socialize/services/authentication.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
     ConstantColors constantColors = ConstantColors();
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => ProfileHelpers()),
         ChangeNotifierProvider(create: (_) => HomePagehelpers()),
         ChangeNotifierProvider(create: (_) => LandingUtils()),
         ChangeNotifierProvider(create: (_) => FirebaseOperations()),

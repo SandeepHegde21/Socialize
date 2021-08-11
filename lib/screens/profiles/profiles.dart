@@ -3,6 +3,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:socialize/constants/Constantcolors.dart';
+import 'package:socialize/screens/profiles/profilehelpers.dart';
 import 'package:socialize/services/authentication.dart';
 
 class Profiles extends StatelessWidget {
@@ -57,7 +58,10 @@ class Profiles extends StatelessWidget {
                   );
                 } else {
                   return Column(
-                    children: [],
+                    children: [
+                      Provider.of<ProfileHelpers>(context, listen: false)
+                          .headerProfile(context, snapshot)
+                    ],
                   );
                 }
               },
