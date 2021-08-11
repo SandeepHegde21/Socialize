@@ -6,6 +6,7 @@ import 'package:socialize/constants/Constantcolors.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:socialize/screens/HomePage/homepage.dart';
 import 'package:socialize/screens/landingpage/landingservices.dart';
+import 'package:socialize/screens/landingpage/landingutils.dart';
 import 'package:socialize/services/authentication.dart';
 
 class LandingHelpers with ChangeNotifier {
@@ -181,8 +182,8 @@ class LandingHelpers with ChangeNotifier {
                     MaterialButton(
                       color: constantColors.redColor,
                       onPressed: () {
-                        Provider.of<LandingService>(context, listen: false)
-                            .signInSheet(context);
+                        Provider.of<LandingUtils>(context, listen: false)
+                            .selectAvatarOptionSheet(context);
                       },
                       child: Text(
                         "Sign In",

@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:socialize/constants/Constantcolors.dart';
 import 'package:socialize/screens/landingpage/landinghelpers.dart';
 import 'package:socialize/screens/landingpage/landingservices.dart';
+import 'package:socialize/screens/landingpage/landingutils.dart';
 import 'package:socialize/screens/splashscreen/splashscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:socialize/services/authentication.dart';
+import 'package:socialize/services/firebaseoperation.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
     ConstantColors constantColors = ConstantColors();
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => LandingUtils()),
+        ChangeNotifierProvider(create: (_) => FirebaseOperations()),
         ChangeNotifierProvider(create: (_) => LandingService()),
         ChangeNotifierProvider(create: (_) => Authentication()),
         ChangeNotifierProvider(create: (_) => LandingHelpers())

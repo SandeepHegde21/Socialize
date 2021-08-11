@@ -27,6 +27,7 @@ dependencies:
   eva_icons_flutter: ^3.0.0
   firebase_auth: ^3.0.1
   firebase_core: ^1.4.0
+  firebase_storage: ^10.0.1
   flutter:
     sdk: flutter
   font_awesome: ^5.10.1
