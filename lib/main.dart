@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:socialize/constants/Constantcolors.dart';
+import 'package:socialize/screens/HomePage/homepagehelpers.dart';
 import 'package:socialize/screens/landingpage/landinghelpers.dart';
 import 'package:socialize/screens/landingpage/landingservices.dart';
 import 'package:socialize/screens/landingpage/landingutils.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
     ConstantColors constantColors = ConstantColors();
     return MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => HomePagehelpers()),
         ChangeNotifierProvider(create: (_) => LandingUtils()),
         ChangeNotifierProvider(create: (_) => FirebaseOperations()),
         ChangeNotifierProvider(create: (_) => LandingService()),
